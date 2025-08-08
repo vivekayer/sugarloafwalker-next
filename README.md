@@ -1,6 +1,6 @@
-# Guitarist SPA (Next.js + Tailwind CSS + TypeScript)
+# sugarloafwalker.com (Next.js + Tailwind CSS + TypeScript)
 
-A single-page musician site built with **Next.js (App Router)**, **Tailwind CSS**, and **TypeScript**.
+A single-page site built with **Next.js (App Router)**, **Tailwind CSS**, and **TypeScript**.
 
 ## Quick Start
 
