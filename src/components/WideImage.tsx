@@ -1,0 +1,23 @@
+import Image from 'next/image';
+
+export default function WideImage() {
+  return (
+    <section className="hidden md:block">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="animated-border">
+          <div className="animated-border-inner">
+            <Image
+              src="/images/amman.jpg"
+              alt="Amman"
+              width={1920}
+              height={1080}
+              sizes="(min-width: 1280px) 1152px, 100vw"
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

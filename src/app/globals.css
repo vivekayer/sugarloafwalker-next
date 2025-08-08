@@ -1,0 +1,38 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+::selection { background: #5a74f5; color: white; }
+
+.glass { @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-glass rounded-2xl; }
+.section { @apply py-20 md:py-28; }
+.section-title { @apply text-3xl md:text-4xl font-semibold tracking-tight mb-8; }
+.section-subtitle { @apply text-base text-gray-300 max-w-2xl; }
+
+/* Subtle animated gradient border utility */
+@keyframes border-pan {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 200% 50%; }
+}
+
+.animated-border {
+	position: relative;
+	border-radius: 0; /* no rounded corners */
+	padding: 3px; /* thinner border */
+	/* Brand gradient: brand-400 -> brand-500 -> brand-600 -> brand-700 */
+	background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706, #b45309);
+	/* static gradient (no animation) */
+	/* soft glow */
+	box-shadow:
+		0 0 24px rgba(245, 158, 11, 0.28), /* brand-500 */
+		0 0 48px rgba(251, 191, 36, 0.18); /* brand-400 */
+}
+
+.animated-border-inner {
+	border-radius: 0; /* keep square corners */
+	background: rgba(2, 6, 23, 0.5); /* slightly lighter to let brand border pop */
+}
+
+/* Animation removed; reduced-motion override not needed */
