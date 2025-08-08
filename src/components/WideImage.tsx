@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function WideImage() {
   return (
     <section className="hidden md:block">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-4  mb-8">
         <div className="animated-border">
           <div className="animated-border-inner">
             <Image

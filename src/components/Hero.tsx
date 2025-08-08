@@ -34,12 +34,6 @@ export default function Hero() {
             >
               Listen
             </a>
-            <a
-              href="#contact"
-              className="px-5 py-3 rounded-lg bg-brand-500 hover:bg-brand-600"
-            >
-              Contact me
-            </a>
           </div>
         </div>
       </div>

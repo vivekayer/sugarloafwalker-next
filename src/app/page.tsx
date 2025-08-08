@@ -18,7 +18,6 @@ export default function Page() {
         <Hero />
         <About />
         <Music />
-        <Gigs />
         <Gallery />
         <Press />
         <ContactSimple email="sugarloafwalker@gmail.com" />
