@@ -29,16 +29,14 @@ export default function Music() {
               <div className="relative w-full aspect-video md:aspect-auto md:h-[390px]">
                 <iframe
                   className="absolute inset-0 w-full h-full rounded-lg"
-                  src="https://www.youtube.com/embed/3n9Z4cYjEZY?rel=0&modestbranding=1&playsinline=1"
+                  src="https://www.youtube.com/embed/FXGvOHe6Llo?rel=0&modestbranding=1&playsinline=1"
                   title="Capers"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   loading="lazy"
                 />
               </div>
-              <p className="mt-3 text-sm text-gray-300">
-                The Late Summer
-              </p>
+              <p className="mt-3 text-sm text-gray-300">Pink House</p>
             </div>
 
             <div className="glass p-4">

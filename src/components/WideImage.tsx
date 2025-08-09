@@ -7,7 +7,7 @@ export default function WideImage() {
         <div className="animated-border">
           <div className="animated-border-inner">
             <Image
-              src="/images/amman.jpg"
+              src="/images/amman-2.jpg"
               alt="Amman"
               width={1920}
               height={1080}
