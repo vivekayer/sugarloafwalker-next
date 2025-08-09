@@ -1,26 +1,56 @@
 
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
   const [status, setStatus] = useState<'idle'|'loading'|'success'|'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState<string | null>(null)
+  const formRef = useRef<HTMLFormElement | null>(null)
+
+  const isProd = process.env.NODE_ENV === 'production'
+
+  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus('loading')
-    const form = new FormData(e.currentTarget)
-    const payload = Object.fromEntries(form.entries())
+
+    if (!serviceId || !templateId || !publicKey || !formRef.current) {
+      const msg = 'Email service not configured.'
+      if (!isProd) {
+        console.error('EmailJS environment variables missing', { hasServiceId: !!serviceId, hasTemplateId: !!templateId, hasPublicKey: !!publicKey })
+        setErrorMsg(msg + ' (dev detail: check NEXT_PUBLIC_* vars & restart dev server)')
+      }
+      setStatus('error')
+      return
+    }
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
-      if (res.ok) setStatus('success')
-      else setStatus('error')
-    } catch {
+      const result = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current,
+        { publicKey }
+      )
+  if (!isProd) console.debug('EmailJS response', result)
+      if (result.status === 200) {
+        setStatus('success')
+        setErrorMsg(null)
+        formRef.current.reset()
+      } else {
+        setStatus('error')
+        if (!isProd) setErrorMsg(`Unexpected EmailJS status: ${result.status}`)
+      }
+    } catch (err) {
+      if (!isProd) {
+        const message = err instanceof Error ? err.message : typeof err === 'string' ? err : JSON.stringify(err)
+        console.error('EmailJS error', err)
+        setErrorMsg(message)
+      }
       setStatus('error')
     }
   }
@@ -30,7 +60,7 @@ export default function Contact() {
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="section-title">Contact</h2>
         <div className="glass p-6">
-          <form onSubmit={onSubmit} className="grid gap-4 md:grid-cols-2">
+          <form ref={formRef} onSubmit={onSubmit} className="grid gap-4 md:grid-cols-2">
             <div className="md:col-span-1">
               <label className="block text-sm text-gray-300 mb-1">Name</label>
               <input
@@ -74,6 +104,9 @@ export default function Contact() {
               {status === "error" && (
                 <span className="text-red-400 text-sm">
                   Something went wrong. Try again.
+                  {!isProd && errorMsg && (
+                    <span className="block mt-1 opacity-80">{errorMsg}</span>
+                  )}
                 </span>
               )}
             </div>

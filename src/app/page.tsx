@@ -20,7 +20,8 @@ export default function Page() {
         <Music />
         <Gallery />
         <Press />
-        <ContactSimple email="sugarloafwalker@gmail.com" />
+        <Contact />
+        {/** <ContactSimple email="sugarloafwalker@gmail.com" /> */}
         <WideImage />
       </main>
       <Footer />
