@@ -17,6 +17,7 @@ export default function WideImage() {
             />
           </div>
         </div>
+        <p className="mt-3 text-sm text-gray-300">Live at Chaos Basement, Amman</p>
       </div>
     </section>
   );

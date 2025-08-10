@@ -62,16 +62,18 @@ export default function Contact() {
         <div className="glass p-6">
           <form ref={formRef} onSubmit={onSubmit} className="grid gap-4 md:grid-cols-2">
             <div className="md:col-span-1">
-              <label className="block text-sm text-gray-300 mb-1">Name</label>
+              <label htmlFor="contact-name" className="block text-sm text-gray-300 mb-1">Name</label>
               <input
+                id="contact-name"
                 name="name"
                 required
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-500"
               />
             </div>
             <div className="md:col-span-1">
-              <label className="block text-sm text-gray-300 mb-1">Email</label>
+              <label htmlFor="contact-email" className="block text-sm text-gray-300 mb-1">Email</label>
               <input
+                id="contact-email"
                 type="email"
                 name="email"
                 required
@@ -79,10 +81,9 @@ export default function Contact() {
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-sm text-gray-300 mb-1">
-                Message
-              </label>
+              <label htmlFor="contact-message" className="block text-sm text-gray-300 mb-1">Message</label>
               <textarea
+                id="contact-message"
                 name="message"
                 rows={5}
                 required
@@ -97,12 +98,12 @@ export default function Contact() {
                 {status === "loading" ? "Sending..." : "Send"}
               </button>
               {status === "success" && (
-                <span className="text-green-400 text-sm">
+                <span className="text-green-400 text-sm" role="status">
                   Thanks! I’ll get back soon.
                 </span>
               )}
               {status === "error" && (
-                <span className="text-red-400 text-sm">
+                <span className="text-red-400 text-sm" role="alert">
                   Something went wrong. Try again.
                   {!isProd && errorMsg && (
                     <span className="block mt-1 opacity-80">{errorMsg}</span>
