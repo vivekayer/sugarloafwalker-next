@@ -93,7 +93,7 @@ export default function Contact() {
             <div className="md:col-span-2 flex items-center gap-3">
               <button
                 disabled={status === "loading"}
-                className="px-5 py-3 rounded-lg bg-brand-500 hover:bg-brand-600 disabled:opacity-60"
+                className="px-5 py-3 rounded-lg bg-brand-500 hover:bg-brand-600 disabled:opacity-60 text-black"
               >
                 {status === "loading" ? "Sending..." : "Send"}
               </button>

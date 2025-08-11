@@ -35,7 +35,10 @@ export default function NavBar() {
             </a>
           ))}
         </nav>
-        <a href="#contact" className="hidden md:inline-flex px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 transition">
+        <a
+          href="#contact"
+            className="hidden md:inline-flex px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700 text-black font-medium transition"
+        >
           Contact me
         </a>
       </div>

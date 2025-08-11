@@ -10,9 +10,9 @@ const photos = [
   { src: "/images/benign-penny/07.jpg", alt: "Benign Penny - 07" },
   { src: "/images/benign-penny/08.jpg", alt: "Benign Penny - 08" },
   { src: "/images/benign-penny/09.jpg", alt: "Benign Penny - 09" },
-  { src: "/images/benign-penny/10.jpg", alt: "Benign Penny - 10" },
   { src: "/images/benign-penny/11.png", alt: "Benign Penny - 11" },
-  { src: "/images/benign-penny/12.jpg", alt: "Benign Penny - 12" }
+  { src: "/images/benign-penny/10.jpg", alt: "Benign Penny - 10" },
+  { src: "/images/benign-penny/13.jpg", alt: "Benign Penny - 13" },
 ];
 
 export default function Gallery() {
