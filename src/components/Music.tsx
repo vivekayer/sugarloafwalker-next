@@ -3,6 +3,9 @@ export default function Music() {
     <section id="music" className="section">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="section-title">Music & Video</h2>
+        <p className="mt-2 mb-6 text-gray-300">
+          Find my music on Bandcamp, Spotify, Apple Music and YouTube.
+        </p>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="glass p-4">
             <div className="relative w-full h-[560px] md:h-[870px]">

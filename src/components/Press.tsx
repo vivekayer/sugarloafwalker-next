@@ -9,26 +9,26 @@ export type PressItem = {
 
 const defaultPress: PressItem[] = [
   {
-    title: 'Album review',
-    outlet: 'Dancing About Architecture — Dave Franklin (UK)',
-    href: 'https://dancing-about-architecture.com/benign-penny-sugar-loaf-walker-reviewed-by-dave-franklin/',
+    title: "Interview",
+    outlet: "The Big Takeover (New York)",
+    href: "https://bigtakeover.com/interviews/AShortConversationwithSugarLoafWalker",
   },
   {
-    title: 'Interview',
-    outlet: 'The Big Takeover (New York)',
-    href: 'https://bigtakeover.com/interviews/AShortConversationwithSugarLoafWalker',
+    title: "Album review",
+    outlet: "Dancing About Architecture — Dave Franklin (UK)",
+    href: "https://dancing-about-architecture.com/benign-penny-sugar-loaf-walker-reviewed-by-dave-franklin/",
   },
   {
-    title: 'Album review',
-    outlet: 'Sleeping Bag Studios (Canada)',
-    href: 'https://sleepingbagstudios.ca/sugar-loaf-walker-benign-penny/',
+    title: "Album review",
+    outlet: "Sleeping Bag Studios (Canada)",
+    href: "https://sleepingbagstudios.ca/sugar-loaf-walker-benign-penny/",
   },
   {
-    title: 'TUNEDLOUD Review',
-    outlet: 'TUNEDLOUD',
-    href: 'http://www.tunedloud.com/2021/06/04/sugar-loaf-walker-benign-penny-delivers-melody-nuance-timbre-and-tone/',
-  }
-]
+    title: "TUNEDLOUD Review",
+    outlet: "TUNEDLOUD",
+    href: "http://www.tunedloud.com/2021/06/04/sugar-loaf-walker-benign-penny-delivers-melody-nuance-timbre-and-tone/",
+  },
+];
 
 export default function Press({ items = defaultPress }: { items?: PressItem[] }) {
   return (

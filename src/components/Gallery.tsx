@@ -19,7 +19,7 @@ export default function Gallery() {
   return (
     <section id="gallery" className="section">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="section-title">Gallery</h2>
+        <h2 className="section-title">Artwork</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {photos.map((p, i) => (
             <div key={i} className="group relative aspect-square overflow-hidden bg-white/5">
